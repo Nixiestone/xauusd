@@ -216,7 +216,7 @@ python xauusd_strategy.py --live
 ```
 
 The bot will:
-- Monitor XAUUSDm every 5 minutes (configurable)
+- Monitor XAUUSDm every 15 minutes (configurable)
 - Generate signals using the three-layered framework
 - Send instant Telegram alerts
 - Track open positions
@@ -234,7 +234,7 @@ Automatically created when you configure the bot:
 {
   "bot_token": "123456789:ABCdefGHIjklMNOpqrsTUVwxyz",
   "chat_id": "987654321",
-  "check_interval": 5,
+  "check_interval": 15,
   "symbol": "XAUUSDm"
 }
 ```
@@ -527,7 +527,7 @@ else:
 ## 📁 File Structure
 
 ```
-xauusd-quant-sniper/
+xauusd/
 │
 ├── xauusd_strategy.py          # Main strategy file
 ├── quick_fix.py                # Utility tool for setup and testing
@@ -683,7 +683,7 @@ Contributions are welcome! Please follow these guidelines:
 
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/xauusd-quant-sniper.git
+git clone https://github.com/nixiestone/xauusd.git
 
 # Create virtual environment
 python -m venv venv
@@ -710,16 +710,14 @@ Copyright (c) 2025 XAUUSD Quant Sniper Contributors
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
+to use, copy, modify, and merge the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IMPLIED,FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
 ```
 
 ---
@@ -782,7 +780,7 @@ This strategy is based on peer-reviewed quantitative research:
 
 Made with ❤️ by algorithmic traders, for algorithmic traders
 
-[Report Bug](https://github.com/yourusername/xauusd-quant-sniper/issues) · [Request Feature](https://github.com/yourusername/xauusd-quant-sniper/issues) · [Documentation](https://github.com/yourusername/xauusd-quant-sniper/wiki)
+[Report Bug](https://github.com/nixiestone/xauusd/issues) · [Request Feature](https://github.com/nixiestone/xauusd/issues) · [Documentation](https://github.com/nixiestone/xauusd/wiki)
 
 </div>
 
