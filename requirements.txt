@@ -1,0 +1,108 @@
+# XAUUSD Quant Sniper Trading Strategy
+# Python Dependencies
+# 
+# Installation: pip install -r requirements.txt
+
+# Core Dependencies
+# ============================================================================
+
+# MetaTrader 5 API - For live market data and trading
+MetaTrader5>=5.0.4474
+
+# Data Processing and Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# HTTP Requests - For Telegram API
+requests>=2.31.0
+
+# Date and Time Utilities (usually included with Python)
+python-dateutil>=2.8.2
+
+# Optional Dependencies
+# ============================================================================
+
+# Timezone Support
+pytz>=2023.3
+
+# JSON Configuration (usually included with Python)
+# json - Built-in module
+
+# Additional Utilities for Development
+# ============================================================================
+
+# Code Formatting (optional, for development)
+# black>=23.0.0
+# autopep8>=2.0.0
+
+# Testing Framework (optional, for development)
+# pytest>=7.4.0
+# pytest-cov>=4.1.0
+
+# Type Checking (optional, for development)
+# mypy>=1.5.0
+
+# Linting (optional, for development)
+# pylint>=2.17.0
+# flake8>=6.1.0
+
+# Documentation (optional, for development)
+# sphinx>=7.1.0
+# sphinx-rtd-theme>=1.3.0
+
+# Performance Analysis (optional, for advanced users)
+# matplotlib>=3.7.0  # For plotting equity curves
+# seaborn>=0.12.0    # For visualization
+# scikit-learn>=1.3.0  # For advanced statistical analysis
+
+# Jupyter Notebooks (optional, for analysis)
+# jupyter>=1.0.0
+# ipython>=8.14.0
+
+# ============================================================================
+# Version Notes
+# ============================================================================
+#
+# MetaTrader5: 
+#   - Requires MT5 terminal to be installed and running
+#   - Windows: Native support
+#   - Mac: Use Wine or virtual machine
+#   - Linux: Use Wine
+#
+# pandas & numpy:
+#   - Core data manipulation libraries
+#   - Required for all strategy calculations
+#
+# requests:
+#   - Used for Telegram Bot API communication
+#   - Required for live notifications
+#
+# pytz:
+#   - Timezone handling for accurate timestamps
+#   - Important for multi-timezone trading
+#
+# ============================================================================
+# Python Version Compatibility
+# ============================================================================
+#
+# Minimum Python Version: 3.8
+# Recommended Python Version: 3.10 or 3.11
+# Tested on: Python 3.8, 3.9, 3.10, 3.11, 3.12
+#
+# ============================================================================
+# Installation Commands
+# ============================================================================
+#
+# Standard Installation:
+#   pip install -r requirements.txt
+#
+# With Development Tools:
+#   pip install -r requirements.txt black pytest pylint
+#
+# With Visualization:
+#   pip install -r requirements.txt matplotlib seaborn
+#
+# Upgrade All:
+#   pip install --upgrade -r requirements.txt
+#
+# ============================================================================

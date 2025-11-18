@@ -1,0 +1,2842 @@
+======================================================================
+MT5 COMPLETE SYMBOL LIST
+======================================================================
+
+Generated: 2025-11-18 10:35:57
+Total Symbols: 400
+
+Broker: Exness Technologies Ltd
+Server: Exness-MT5Trial9
+
+======================================================================
+ALL SYMBOLS
+======================================================================
+
+
+PRECIOUS METALS (11 symbols)
+----------------------------------------------------------------------
+
+Symbol: BTCXAGm
+  Description: Bitcoin vs Silver
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 1.0
+
+Symbol: BTCXAUm
+  Description: Bitcoin vs Gold
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 1.0
+
+Symbol: XAGAUDm
+  Description: Silver vs Australian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 5000.0
+
+Symbol: XAGEURm
+  Description: Silver vs Euro
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 5000.0
+
+Symbol: XAGGBPm
+  Description: Silver vs Great Britain Pound
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 5000.0
+
+Symbol: XAGJPYm
+  Description: Silver vs Japanese Yen
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 5000.0
+
+Symbol: XAGUSDm
+  Description: Silver vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 5000.0
+
+Symbol: XAUAUDm
+  Description: Gold vs Australian Dollar
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100.0
+
+Symbol: XAUEURm
+  Description: Gold vs Euro
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100.0
+
+Symbol: XAUGBPm
+  Description: Gold vs Great Britain Pound
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100.0
+
+Symbol: XAUUSDm
+  Description: Gold vs US Dollar
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100.0
+
+
+FOREX PAIRS (7 symbols)
+----------------------------------------------------------------------
+
+Symbol: AUDUSDm
+  Description: Australian Dollar vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURUSDm
+  Description: Euro vs US Dollar
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPUSDm
+  Description: Great Britain Pound vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDUSDm
+  Description: New Zealand Dollar vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDCADm
+  Description: US Dollar vs Canadian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDCHFm
+  Description: US Dollar vs Swiss Franc
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDJPYm
+  Description: US Dollar vs Japanese Yen
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+
+INDICES (7 symbols)
+----------------------------------------------------------------------
+
+Symbol: USDXOF
+  Description: US Dollar vs West African CFA
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDXOFm
+  Description: US Dollar vs West African CFA
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: DXYm
+  Description: US Dollar Index
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 1000.0
+
+Symbol: US30m
+  Description: US Wall Street 30 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 1
+  Contract Size: 1.0
+
+Symbol: US500m
+  Description: US SPX 500 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: US30_x10m
+  Description: US Wall Street 30 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 1
+  Contract Size: 10.0
+
+Symbol: US500_x100m
+  Description: US SPX 500 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+
+CRYPTOCURRENCIES (10 symbols)
+----------------------------------------------------------------------
+
+Symbol: BTCJPYm
+  Description: Bitcoin vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 0
+  Contract Size: 1.0
+
+Symbol: BTCKRWm
+  Description: Bitcoin vs South Korea Won
+  Visible: No
+  Tradeable: No
+  Digits: 0
+  Contract Size: 1.0
+
+Symbol: BTCUSDm
+  Description: Bitcoin vs US Dollar
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: ETHUSDm
+  Description: Ethereum vs US Dollar
+  Visible: Yes
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: LTCUSDm
+  Description: Litecoin vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: XRPUSDm
+  Description: Ripple vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 1.0
+
+Symbol: BTCAUDm
+  Description: Bitcoin vs Australian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 1
+  Contract Size: 1.0
+
+Symbol: BTCCNHm
+  Description: Bitcoin vs offshore Chinese Renminbi
+  Visible: No
+  Tradeable: Yes
+  Digits: 1
+  Contract Size: 1.0
+
+Symbol: BTCTHBm
+  Description: Bitcoin vs Thai Baht
+  Visible: No
+  Tradeable: Yes
+  Digits: 0
+  Contract Size: 1.0
+
+Symbol: BTCZARm
+  Description: Bitcoin vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 0
+  Contract Size: 1.0
+
+
+COMMODITIES (2 symbols)
+----------------------------------------------------------------------
+
+Symbol: UKOILm
+  Description: Crude Oil Brent
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 1000.0
+
+Symbol: USOILm
+  Description: Crude Oil
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 1000.0
+
+
+STOCKS (5 symbols)
+----------------------------------------------------------------------
+
+Symbol: AAPLm
+  Description: Apple Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: AMZNm
+  Description: Amazon.com, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: GOOGLm
+  Description: Alphabet Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MSFTm
+  Description: Microsoft Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: TSLAm
+  Description: Tesla Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+
+OTHER INSTRUMENTS (358 symbols)
+----------------------------------------------------------------------
+
+Symbol: USDRUB
+  Description: US Dollar vs Russian Ruble
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDAED
+  Description: US Dollar vs United Arab Emirates Dirham
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDAMD
+  Description: US Dollar vs Armenian Dram
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDARS
+  Description: US Dollar vs Argentine Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDAZN
+  Description: US Dollar vs Azerbaijani Manat
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBDT
+  Description: US Dollar vs Bangladeshi taka
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBGN
+  Description: US Dollar vs Bulgarian Lev
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBHD
+  Description: US Dollar vs Bahraini Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDBND
+  Description: US Dollar vs Brunei Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBRL
+  Description: US Dollar vs Brazilian Real
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDCLP
+  Description: US Dollar vs Chilean Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDCNY
+  Description: US Dollar vs Yuan Renminbi
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDCOP
+  Description: US Dollar vs Colombian Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDDZD
+  Description: US Dollar vs Algerian Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDEGP
+  Description: US Dollar vs Egyptian Pound
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDGEL
+  Description: US Dollar vs Georgian Lari
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDGHS
+  Description: US Dollar vs Ghanaian Cedi
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDIDR
+  Description: US Dollar vs Rupiah
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDINR
+  Description: US Dollar vs Indian Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: USDISK
+  Description: US Dollar vs Iceland Krona
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDJOD
+  Description: US Dollar vs Jordanian Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKES
+  Description: US Dollar vs Kenyan Shilling
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDKGS
+  Description: US Dollar vs Brunei Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKRW
+  Description: US Dollar vs South Korea Won
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKWD
+  Description: US Dollar vs Kuwaiti Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKZT
+  Description: US Dollar vs Kazakhstan Tenge
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100000.0
+
+Symbol: USDLBP
+  Description: US Dollar vs Lebanese Pound
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDLKR
+  Description: US Dollar vs Sri Lankan Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDMAD
+  Description: US Dollar vs Moroccan Dirham
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDMYR
+  Description: US Dollar vs Malaysian Ringgit
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDNGN
+  Description: US Dollar vs Nigerian naira
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDNPR
+  Description: US Dollar vs Nepalese Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDOMR
+  Description: US Dollar vs Omani Rial
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDPHP
+  Description: US Dollar vs Philippine Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDPKR
+  Description: US Dollar vs Pakistan Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDQAR
+  Description: US Dollar vs Qatari Riyal
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDRON
+  Description: US Dollar vs Romanian Leu New
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDRUR
+  Description: US Dollar vs Russian Ruble
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDSAR
+  Description: US Dollar vs Saudi Riyal
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDSYP
+  Description: US Dollar vs Syrian Pound
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDTJS
+  Description: US Dollar vs Tajikistan Somoni
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDTMT
+  Description: US Dollar vs Turkmenistan Manat
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDTND
+  Description: US Dollar vs Tunisian Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDTWD
+  Description: US Dollar vs New Taiwan Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDUAH
+  Description: US Dollar vs Hryvnia
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDUGX
+  Description: US Dollar vs Uganda Shilling
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDUZS
+  Description: US Dollar vs Uzbekistan Som
+  Visible: No
+  Tradeable: No
+  Digits: 0
+  Contract Size: 100000.0
+
+Symbol: USDVND
+  Description: US Dollar vs Vietnamese dong
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDVUV
+  Description: US Dollar vs Vatu
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDHRK
+  Description: US Dollar vs Croatian Kuna
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDHUF
+  Description: US Dollar vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: USDAEDm
+  Description: US Dollar vs United Arab Emirates Dirham
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDAMDm
+  Description: US Dollar vs Armenian Dram
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDARSm
+  Description: US Dollar vs Argentine Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDAZNm
+  Description: US Dollar vs Azerbaijani Manat
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBDTm
+  Description: US Dollar vs Bangladeshi taka
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBGNm
+  Description: US Dollar vs Bulgarian Lev
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBHDm
+  Description: US Dollar vs Bahraini Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDBNDm
+  Description: US Dollar vs Brunei Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDBRLm
+  Description: US Dollar vs Brazilian Real
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDCLPm
+  Description: US Dollar vs Chilean Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDCNYm
+  Description: US Dollar vs Yuan Renminbi
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDCOPm
+  Description: US Dollar vs Colombian Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDDZDm
+  Description: US Dollar vs Algerian Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDEGPm
+  Description: US Dollar vs Egyptian Pound
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDGELm
+  Description: US Dollar vs Georgian Lari
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDGHSm
+  Description: US Dollar vs Ghanaian Cedi
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDIDRm
+  Description: US Dollar vs Rupiah
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDINRm
+  Description: US Dollar vs Indian Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: USDISKm
+  Description: US Dollar vs Iceland Krona
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDJODm
+  Description: US Dollar vs Jordanian Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKESm
+  Description: US Dollar vs Kenyan Shilling
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDKGSm
+  Description: US Dollar vs Brunei Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKRWm
+  Description: US Dollar vs South Korea Won
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKWDm
+  Description: US Dollar vs Kuwaiti Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDKZTm
+  Description: US Dollar vs Kazakhstan Tenge
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100000.0
+
+Symbol: USDLBPm
+  Description: US Dollar vs Lebanese Pound
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDLKRm
+  Description: US Dollar vs Sri Lankan Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDMADm
+  Description: US Dollar vs Moroccan Dirham
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDMYRm
+  Description: US Dollar vs Malaysian Ringgit
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDNGNm
+  Description: US Dollar vs Nigerian naira
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDNPRm
+  Description: US Dollar vs Nepalese Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDOMRm
+  Description: US Dollar vs Omani Rial
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDPHPm
+  Description: US Dollar vs Philippine Peso
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDPKRm
+  Description: US Dollar vs Pakistan Rupee
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDQARm
+  Description: US Dollar vs Qatari Riyal
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDRONm
+  Description: US Dollar vs Romanian Leu New
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDRURm
+  Description: US Dollar vs Russian Ruble
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDSARm
+  Description: US Dollar vs Saudi Riyal
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDSYPm
+  Description: US Dollar vs Syrian Pound
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDTJSm
+  Description: US Dollar vs Tajikistan Somoni
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDTMTm
+  Description: US Dollar vs Turkmenistan Manat
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDTNDm
+  Description: US Dollar vs Tunisian Dinar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDTWDm
+  Description: US Dollar vs New Taiwan Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDUAHm
+  Description: US Dollar vs Hryvnia
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDUGXm
+  Description: US Dollar vs Uganda Shilling
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDUZSm
+  Description: US Dollar vs Uzbekistan Som
+  Visible: No
+  Tradeable: No
+  Digits: 0
+  Contract Size: 100000.0
+
+Symbol: USDVNDm
+  Description: US Dollar vs Vietnamese dong
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDVUVm
+  Description: US Dollar vs Vatu
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDHRKm
+  Description: US Dollar vs Croatian Kuna
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDHUFm
+  Description: US Dollar vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: USDRUBm
+  Description: US Dollar vs Russian Ruble
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: MBTUSD
+  Description: Micro Bitcoin vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 8
+  Contract Size: 1.0
+
+Symbol: MBTUSDm
+  Description: Micro Bitcoin vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 8
+  Contract Size: 1.0
+
+Symbol: HRTBT
+  Description: HeartBeat
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 1.0
+
+Symbol: BCHUSDm
+  Description: Bitcoin Cash vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: AAVEUSDm
+  Description: Aave Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: BATUSDm
+  Description: Basic Attention Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 500.0
+
+Symbol: LINKUSDm
+  Description: ChainLink Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 10.0
+
+Symbol: SNXUSDm
+  Description: Synthetix Network Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 10.0
+
+Symbol: SOLUSDm
+  Description: Solana Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 10.0
+
+Symbol: UNIUSDm
+  Description: Uniswap Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 10.0
+
+Symbol: ADAUSDm
+  Description: Cardano Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 1000.0
+
+Symbol: BNBUSDm
+  Description: BNB Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 10.0
+
+Symbol: DOTUSDm
+  Description: Polkadot Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100.0
+
+Symbol: ENJUSDm
+  Description: Enjin Coin Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 1000.0
+
+Symbol: FILUSDm
+  Description: Filecoin Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 50.0
+
+Symbol: XTZUSDm
+  Description: Tezos Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 500.0
+
+Symbol: 1INCHUSDm
+  Description: 1inch Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 500.0
+
+Symbol: CAKEUSDm
+  Description: PancakeSwap Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100.0
+
+Symbol: COMPUSDm
+  Description: Compound Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 5.0
+
+Symbol: DOGEUSDm
+  Description: Dogecoin Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 6
+  Contract Size: 5000.0
+
+Symbol: HBARUSDm
+  Description: Hedera Hashgraph Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 6
+  Contract Size: 2000.0
+
+Symbol: HTUSDm
+  Description: Huobi Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100.0
+
+Symbol: IOSTUSDm
+  Description: IOSToken vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 7
+  Contract Size: 5000.0
+
+Symbol: MANAUSDm
+  Description: Decentraland Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 6
+  Contract Size: 1000.0
+
+Symbol: MATICUSDm
+  Description: Polygon Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 6
+  Contract Size: 2000.0
+
+Symbol: THETAUSDm
+  Description: Theta Network Token vs US Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 500.0
+
+Symbol: XNGUSDm
+  Description: Natural Gas vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 4
+  Contract Size: 10000.0
+
+Symbol: AUDCADm
+  Description: Australian Dollar vs Canadian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDCHFm
+  Description: Australian Dollar vs Swiss Franc
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDCZKm
+  Description: Australian Dollar vs Czech Koruna
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: AUDDKKm
+  Description: Australian Dollar vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDHUFm
+  Description: Australian Dollar vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: AUDJPYm
+  Description: Australian Dollar vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: AUDMXNm
+  Description: Australian Dollar vs Mexican Peso
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDNOKm
+  Description: Australian Dollar vs Norwegian Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDNZDm
+  Description: Australian Dollar vs New Zealand Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDPLNm
+  Description: Australian Dollar vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDSEKm
+  Description: Australian Dollar vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDSGDm
+  Description: Australian Dollar vs Singapore Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDTRYm
+  Description: Australian Dollar vs New Turkish Lira
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: AUDZARm
+  Description: Australian Dollar vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CADCHFm
+  Description: Canadian Dollar vs Swiss Franc
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CADCZKm
+  Description: Canadian Dollar vs Czech Koruna
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: CADJPYm
+  Description: Canadian Dollar vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: CADMXNm
+  Description: Canadian Dollar vs Mexican Peso
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CADNOKm
+  Description: Canadian Dollar vs Norwegian Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CADPLNm
+  Description: Canadian Dollar vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CADTRYm
+  Description: Canadian Dollar vs New Turkish Lira
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFDKKm
+  Description: Swiss Franc vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFHUFm
+  Description: Swiss Franc vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: CHFJPYm
+  Description: Swiss Franc vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: CHFMXNm
+  Description: Swiss Franc vs Mexican Peso
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFNOKm
+  Description: Swiss Franc vs Norwegian Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFPLNm
+  Description: Swiss Franc vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFSEKm
+  Description: Swiss Franc vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFSGDm
+  Description: Swiss Franc vs Singapore Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFTRYm
+  Description: Swiss Franc vs New Turkish Lira
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CHFZARm
+  Description: Swiss Franc vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: CZKPLNm
+  Description: Czech Koruna vs Zloty
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: DKKCZKm
+  Description: Danish Krona vs Czech Koruna
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: DKKHUFm
+  Description: Danish Krona vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: DKKJPYm
+  Description: Danish Krona vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: DKKPLNm
+  Description: Danish Krona vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: DKKSGDm
+  Description: Danish Krona vs Singapore Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: DKKZARm
+  Description: Danish Krona vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURAUDm
+  Description: Euro vs Australian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURCADm
+  Description: Euro vs Canadian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURCHFm
+  Description: Euro vs Swiss Franc
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURCZKm
+  Description: Euro vs Czech Koruna
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: EURDKKm
+  Description: Euro vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURGBPm
+  Description: Euro vs Great Britain Pound
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURHKDm
+  Description: Euro vs Hong Kong Dollar
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURHUFm
+  Description: Euro vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: EURJPYm
+  Description: Euro vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: EURMXNm
+  Description: Euro vs Mexican Peso
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURNOKm
+  Description: Euro vs Norwegian Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURNZDm
+  Description: Euro vs New Zealand Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURPLNm
+  Description: Euro vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURSEKm
+  Description: Euro vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURSGDm
+  Description: Euro vs Singapore Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURTRYm
+  Description: Euro vs New Turkish Lira
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: EURZARm
+  Description: Euro vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPAUDm
+  Description: Great Britain Pound vs Australian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPCADm
+  Description: Great Britain Pound vs Canadian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPCHFm
+  Description: Great Britain Pound vs Swiss Franc
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPCZKm
+  Description: Great Britain Pound vs Czech Koruna
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: GBPDKKm
+  Description: Great Britain Pound vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPHUFm
+  Description: Great Britain Pound vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: GBPILSm
+  Description: Great Britain Pound vs New Israeli Shekel
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPJPYm
+  Description: Great Britain Pound vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: GBPMXNm
+  Description: Great Britain Pound vs Mexican Peso
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPNOKm
+  Description: Great Britain Pound vs Norwegian Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPNZDm
+  Description: Great Britain Pound vs New Zealand Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPPLNm
+  Description: Great Britain Pound vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPSEKm
+  Description: Great Britain Pound vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPSGDm
+  Description: Great Britain Pound vs Singapore Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPTRYm
+  Description: Great Britain Pound vs New Turkish Lira
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: GBPZARm
+  Description: Great Britain Pound vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: HKDJPYm
+  Description: Hong Kong Dollar vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: HUFJPYm
+  Description: Forint vs Japanese Yen
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: MXNJPYm
+  Description: Mexican Peso vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: NOKDKKm
+  Description: Norwegian Krona vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NOKJPYm
+  Description: Norwegian Krona vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: NOKSEKm
+  Description: Norwegian Krona vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDCADm
+  Description: New Zealand Dollar vs Canadian Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDCHFm
+  Description: New Zealand Dollar vs Swiss Franc
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDCZKm
+  Description: New Zealand Dollar vs Czech Koruna
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: NZDDKKm
+  Description: New Zealand Dollar vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDHUFm
+  Description: New Zealand Dollar vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: NZDJPYm
+  Description: New Zealand Dollar vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: NZDMXNm
+  Description: New Zealand Dollar vs Mexican Peso
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDNOKm
+  Description: New Zealand Dollar vs Norwegian Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDPLNm
+  Description: New Zealand Dollar vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDSEKm
+  Description: New Zealand Dollar vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDSGDm
+  Description: New Zealand Dollar vs Singapore Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDTRYm
+  Description: New Zealand Dollar vs New Turkish Lira
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: NZDZARm
+  Description: New Zealand Dollar vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: PLNDKKm
+  Description: Zloty vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: PLNHUFm
+  Description: Zloty vs Forint
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: PLNJPYm
+  Description: Zloty vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: PLNSEKm
+  Description: Zloty vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: SEKDKKm
+  Description: Swedish Krona vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: SEKJPYm
+  Description: Swedish Krona vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: SEKPLNm
+  Description: Swedish Krona vs Romanian Leu New
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: SGDHKDm
+  Description: Singapore Dollar vs Hong Kong Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: SGDJPYm
+  Description: Singapore Dollar vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: TRYDKKm
+  Description: New Turkish Lira vs Danish Krona
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: TRYJPYm
+  Description: New Turkish Lira vs Japanese Yen
+  Visible: No
+  Tradeable: No
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: TRYZARm
+  Description: New Turkish Lira vs South African Rand
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDCNHm
+  Description: US Dollar vs offshore Chinese Renminbi
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDCZKm
+  Description: US Dollar vs Czech Koruna
+  Visible: No
+  Tradeable: No
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDDKKm
+  Description: US Dollar vs Danish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDHKDm
+  Description: US Dollar vs Hong Kong Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDILSm
+  Description: US Dollar vs New Israeli Shekel
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDMXNm
+  Description: US Dollar vs Mexican Peso
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDNOKm
+  Description: US Dollar vs Norwegian Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDPLNm
+  Description: US Dollar vs Zloty
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDSEKm
+  Description: US Dollar vs Swedish Krona
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDSGDm
+  Description: US Dollar vs Singapore Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDTHBm
+  Description: US Dollar vs Thai Baht
+  Visible: No
+  Tradeable: Yes
+  Digits: 4
+  Contract Size: 100000.0
+
+Symbol: USDTRYm
+  Description: US Dollar vs New Turkish Lira
+  Visible: No
+  Tradeable: No
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: USDZARm
+  Description: US Dollar vs South African Rand
+  Visible: No
+  Tradeable: Yes
+  Digits: 5
+  Contract Size: 100000.0
+
+Symbol: XPDUSDm
+  Description: Palladium
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: XPTUSDm
+  Description: Platinum
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ZARJPYm
+  Description: South African Rand vs Japanese Yen
+  Visible: No
+  Tradeable: Yes
+  Digits: 3
+  Contract Size: 100000.0
+
+Symbol: XALUSDm
+  Description: Aluminum vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: XCUUSDm
+  Description: Copper vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: XNIUSDm
+  Description: Nickel vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: XPBUSDm
+  Description: Lead vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: XZNUSDm
+  Description: Zinc vs US Dollar
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: AUS200m
+  Description: Australia S&P ASX 200 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: DE30m
+  Description: Germany 30 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 1
+  Contract Size: 1.0
+
+Symbol: FR40m
+  Description: France 40 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: HK50m
+  Description: Hong Kong 50 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 1
+  Contract Size: 1.0
+
+Symbol: JP225m
+  Description: Japan 225 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 1
+  Contract Size: 1.0
+
+Symbol: STOXX50m
+  Description: EU Stocks 50 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: UK100m
+  Description: UK 100 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: USTECm
+  Description: US Tech 100 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: IN50m
+  Description: India 50 Index
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 1.0
+
+Symbol: USTEC_x100m
+  Description: US Tech 100 Index
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ABBVm
+  Description: AbbVie Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ABTm
+  Description: Abbott Laboratories
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ADBEm
+  Description: Adobe Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ADPm
+  Description: Automatic Data Processing, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: AMDm
+  Description: Advanced Micro Devices, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: AMGNm
+  Description: Amgen Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: AMTm
+  Description: American Tower Corporation (REIT)
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ATVIm
+  Description: Activision Blizzard, Inc
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: AVGOm
+  Description: Broadcom Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BAm
+  Description: Boeing Company (The)
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BABAm
+  Description: Alibaba Group Holding Limited
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BACm
+  Description: Bank of America Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BIIBm
+  Description: Biogen Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BMYm
+  Description: Bristol-Myers Squibb Company
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: Cm
+  Description: Citigroup Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: CHTRm
+  Description: Charter Communications, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: CMCSAm
+  Description: Comcast Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: CMEm
+  Description: CME Group Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: COSTm
+  Description: Costco Wholesale Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: CSCOm
+  Description: Cisco Systems, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: CSXm
+  Description: CSX Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: CVSm
+  Description: CVS Health Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: EAm
+  Description: Electronic Arts Inc.
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: EBAYm
+  Description: eBay Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: EQIXm
+  Description: Equinix, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: Fm
+  Description: Ford Motor Company
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: FBm
+  Description: Facebook, Inc.
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: GILDm
+  Description: Gilead Sciences, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: HDm
+  Description: Home Depot, Inc. (The)
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: IBMm
+  Description: International Business Machines Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: INTCm
+  Description: Intel Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: INTUm
+  Description: Intuit Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ISRGm
+  Description: Intuitive Surgical, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: JNJm
+  Description: Johnson & Johnson
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: JPMm
+  Description: J P Morgan Chase & Co
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: KOm
+  Description: Coca-Cola Company (The)
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: LINm
+  Description: Linde plc
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: LLYm
+  Description: Eli Lilly and Company
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: LMTm
+  Description: Lockheed Martin Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MAm
+  Description: Mastercard Incorporated
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MCDm
+  Description: McDonalds Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MDLZm
+  Description: Mondelez International, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MMMm
+  Description: 3M Company
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MOm
+  Description: Altria Group, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MRKm
+  Description: Merck & Company, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: MSm
+  Description: Morgan Stanley
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: NFLXm
+  Description: Netflix, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: NKEm
+  Description: Nike, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: NVDAm
+  Description: NVIDIA Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ORCLm
+  Description: Oracle Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: PEPm
+  Description: PepsiCo, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: PFEm
+  Description: Pfizer, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: PGm
+  Description: Procter & Gamble Company (The)
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: PMm
+  Description: Philip Morris International Inc
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: PYPLm
+  Description: PayPal Holdings, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: REGNm
+  Description: Regeneron Pharmaceuticals, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: SBUXm
+  Description: Starbucks Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: Tm
+  Description: AT&T Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: TMOm
+  Description: Thermo Fisher Scientific Inc
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: TMUSm
+  Description: T-Mobile US, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: UNHm
+  Description: UnitedHealth Group Incorporated
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: UPSm
+  Description: United Parcel Service, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: Vm
+  Description: Visa Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: VRTXm
+  Description: Vertex Pharmaceuticals Incorporated
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: VZm
+  Description: Verizon Communications Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: WFCm
+  Description: Wells Fargo & Company
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: WMTm
+  Description: Walmart Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: XOMm
+  Description: Exxon Mobil Corporation
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: AMCm
+  Description: AMC Entertainment Holdings, Inc
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BBm
+  Description: BlackBerry Ltd
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BBBYm
+  Description: Bed Bath & Beyond Inc.
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BEKEm
+  Description: KE Holdings Inc
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BIDUm
+  Description: Baidu, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BILIm
+  Description: Bilibili Inc
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BRQSm
+  Description: Borqs Technologies Inc
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: BYNDm
+  Description: Beyond Meat Inc.
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: CANm
+  Description: Canaan Inc
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: EDUm
+  Description: New Oriental Education & Technology Group Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: FTNTm
+  Description: Fortinet, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: FUTUm
+  Description: Futu Holdings Ltd
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: IQm
+  Description: IQIYI Inc
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: JDm
+  Description: JD.com, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: LIm
+  Description: Li Auto Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: NIOm
+  Description: NIO Limited
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: NTESm
+  Description: NetEase, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: PDDm
+  Description: Pinduoduo Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: RLXm
+  Description: RLX Technology Inc
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: TALm
+  Description: TAL Education Group
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: TIGRm
+  Description: Up Fintech Holding Ltd
+  Visible: No
+  Tradeable: No
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: TMEm
+  Description: Tencent Music Entertainment Group
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: TSMm
+  Description: Taiwan Semiconductor Manufacturing Company Limited
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: VIPSm
+  Description: Vipshop Holdings Ltd
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: XPEVm
+  Description: XPeng Inc. 
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: YUMCm
+  Description: Yum China Holdings, Inc
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: ZTOm
+  Description: ZTO Express (Cayman) Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
+Symbol: METAm
+  Description: Meta Platforms, Inc.
+  Visible: No
+  Tradeable: Yes
+  Digits: 2
+  Contract Size: 100.0
+
