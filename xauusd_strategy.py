@@ -44,8 +44,9 @@ except ImportError:
     print("⚠️  MetaTrader5 not installed. Will use CSV files or sample data.")
     print("   To enable MT5: pip install MetaTrader5")
 
-
-# SECTION 1: DATA LOADING
+# ============================================================================
+# SECTION 1: DATA LOADING (UPDATED FOR XAUUSDm)
+# ============================================================================
 
 class DataLoader:
     """Handles loading and preparing XAUUSDm and DXY data from multiple sources"""
@@ -188,6 +189,10 @@ class DataLoader:
             print("⚠️  DXY not found, using EUR/USD inverse as proxy...")
             eurusd = DataLoader.load_from_mt5("EURUSDm", "M5", bars, start_date, end_date)
             
+            if eurusd is None:
+                # Try without 'm' suffix
+                eurusd = DataLoader.load_from_mt5("EURUSD", "M5", bars, start_date, end_date)
+            
             if eurusd is not None:
                 dxy = eurusd.copy()
                 dxy['Open'] = 100 / eurusd['Open']
@@ -249,14 +254,23 @@ class MacroFilter:
         Calculate rolling correlation between XAUUSDm and DXY
         
         Gold typically has negative correlation with USD
+        
+        FIXED: Proper index alignment
         """
         # Align indices first
-        df = pd.DataFrame({'xauusd': xauusd_close, 'dxy': dxy_close}).dropna()
+        common_index = xauusd_close.index.intersection(dxy_close.index)
+        xau_aligned = xauusd_close.loc[common_index]
+        dxy_aligned = dxy_close.loc[common_index]
         
-        if len(df) < window:
-            return pd.Series(np.nan, index=df.index)
+        # Create DataFrame with aligned data
+        df = pd.DataFrame({'xauusd': xau_aligned, 'dxy': dxy_aligned})
         
+        # Calculate rolling correlation
         correlation = df['xauusd'].rolling(window=window).corr(df['dxy'])
+        
+        # Reindex to original xauusd index
+        correlation = correlation.reindex(xauusd_close.index, method='ffill').fillna(0)
+        
         return correlation
     
     def calculate_macro_bias(self, xauusd_close, dxy_close):
@@ -265,18 +279,13 @@ class MacroFilter:
         
         Returns:
             Series: 1 (Bullish), -1 (Bearish), 0 (Neutral)
+        
+        FIXED: Proper index alignment to avoid IndexingError
         """
-        # Align the indices first
-        aligned_data = pd.DataFrame({
-            'xauusd': xauusd_close,
-            'dxy': dxy_close
-        }).dropna()
-        
-        if len(aligned_data) == 0:
-            return pd.Series(0, index=xauusd_close.index)
-        
-        xauusd_aligned = aligned_data['xauusd']
-        dxy_aligned = aligned_data['dxy']
+        # Ensure both series have the same index
+        common_index = xauusd_close.index.intersection(dxy_close.index)
+        xauusd_aligned = xauusd_close.loc[common_index]
+        dxy_aligned = dxy_close.loc[common_index]
         
         # Calculate DXY momentum (proxy for dollar strength)
         dxy_sma_fast = dxy_aligned.rolling(20).mean()
@@ -289,17 +298,17 @@ class MacroFilter:
         correlation = self.calculate_dxy_correlation(xauusd_aligned, dxy_aligned, window=100)
         
         # Macro bias: Inverse of DXY trend (Gold moves opposite to USD)
-        macro_bias = pd.Series(dxy_trend, index=xauusd_aligned.index)
+        macro_bias = pd.Series(dxy_trend, index=common_index)
         
-        # Apply correlation strength filter
+        # Apply correlation strength filter with proper index alignment
         # Only strong negative correlation confirms the relationship
         weak_correlation = np.abs(correlation) < 0.3
-        # Ensure indices match before applying boolean mask
-        weak_correlation_aligned = weak_correlation.reindex(macro_bias.index, fill_value=True)
-        macro_bias[weak_correlation_aligned] = 0  # Neutral when correlation is weak
         
-        # Reindex back to original xauusd_close index to maintain consistency
-        macro_bias = macro_bias.reindex(xauusd_close.index, fill_value=0)
+        # Use .loc to ensure proper alignment
+        macro_bias.loc[weak_correlation.fillna(False)] = 0  # Neutral when correlation is weak
+        
+        # Reindex to original xauusd index with forward fill
+        macro_bias = macro_bias.reindex(xauusd_close.index, method='ffill').fillna(0)
         
         return macro_bias
     
@@ -337,15 +346,16 @@ class StatisticalPredictor:
     - Volatility regime detection (MRS-GARCH proxy)
     - Pattern recognition
     
-    Version: 12.0
+    Version: 12.0 - FIXED: More realistic confidence threshold
     """
     
-    def __init__(self, prediction_threshold=0.65):
+    def __init__(self, prediction_threshold=0.55):
         """
         Args:
-            prediction_threshold: Confidence threshold for signal generation
+            prediction_threshold: Confidence threshold for signal generation (FIXED: 0.55 instead of 0.65)
         """
         self.threshold = prediction_threshold
+        print(f"  AI Predictor: Confidence threshold = {prediction_threshold:.1%}")
     
     def detect_volatility_regime(self, df, period=20):
         """
@@ -365,7 +375,7 @@ class StatisticalPredictor:
         
         # Normalize ATR
         atr_percentile = atr.rolling(100).apply(
-            lambda x: (x.iloc[-1] / x.mean()) if len(x) > 0 and x.mean() > 0 else 1
+            lambda x: (x.iloc[-1] / x.mean()) if len(x) > 0 else 1
         )
         
         # High volatility = trending market
@@ -418,23 +428,32 @@ class StatisticalPredictor:
         Returns:
             prediction: 1 (Long), -1 (Short), 0 (No signal)
             confidence: Float between 0 and 1
-        """
-        # Align macro_bias with df index
-        macro_bias_aligned = macro_bias.reindex(df.index, fill_value=0)
         
+        FIXED: Ensure all outputs have same index as df
+        """
         # Detect volatility regime
         regime, atr = self.detect_volatility_regime(df)
         
         # Calculate momentum
         momentum = self.calculate_momentum_score(df)
         
+        # Ensure macro_bias is aligned with df.index
+        if not macro_bias.index.equals(df.index):
+            macro_bias = macro_bias.reindex(df.index, fill_value=0)
+        
         # Prediction confidence based on alignment
         # High confidence when momentum aligns with macro bias
         confidence = np.abs(momentum) * 0.5  # Base confidence from momentum strength
         
         # Boost confidence when aligned with macro
-        aligned = (momentum * macro_bias_aligned) > 0
+        aligned = (momentum * macro_bias) > 0
         confidence[aligned] += 0.3
+        
+        # Ensure confidence has correct index
+        if not isinstance(confidence, pd.Series):
+            confidence = pd.Series(confidence, index=df.index)
+        else:
+            confidence = confidence.reindex(df.index, fill_value=0)
         
         # Generate prediction
         prediction = pd.Series(0, index=df.index)
@@ -461,113 +480,127 @@ class SMCExecutionEngine:
     - Break of Structure (BOS) confirmation
     - Sniper entry with tight stops for high R:R
     
-    Version: 12.0
+    Version: 12.0 - FIXED: Complete index alignment throughout
     """
     
-    def __init__(self, swing_lookback=20, fvg_threshold=0.0001):
+    def __init__(self, swing_lookback=15, fvg_threshold=2.0):
         """
         Args:
-            swing_lookback: Periods to look back for swing highs/lows
-            fvg_threshold: Minimum gap size to qualify as FVG (in price units)
+            swing_lookback: Periods to look back for swing highs/lows (FIXED: 15 instead of 20)
+            fvg_threshold: Minimum gap size to qualify as FVG (FIXED: $2 instead of $0.0001)
         """
         self.swing_lookback = swing_lookback
         self.fvg_threshold = fvg_threshold
+        print(f"  SMC Engine: FVG threshold = ${fvg_threshold:.2f}, Swing lookback = {swing_lookback}")
     
     def identify_swing_levels(self, df):
         """
         Identify swing highs and lows (liquidity pools)
+        FIXED: Complete index alignment
         """
-        high = df['High']
-        low = df['Low']
+        high = df['High'].copy()
+        low = df['Low'].copy()
         
-        # Swing highs (local maxima)
-        swing_highs = high.rolling(window=self.swing_lookback, center=True).max()
-        is_swing_high = (high == swing_highs)
+        # Swing highs (local maxima) - FIXED: No center=True
+        swing_highs = high.rolling(window=self.swing_lookback, min_periods=1).max()
+        is_swing_high = (high == swing_highs).fillna(False)
         
-        # Swing lows (local minima)
-        swing_lows = low.rolling(window=self.swing_lookback, center=True).min()
-        is_swing_low = (low == swing_lows)
+        # Swing lows (local minima) - FIXED: No center=True
+        swing_lows = low.rolling(window=self.swing_lookback, min_periods=1).min()
+        is_swing_low = (low == swing_lows).fillna(False)
+        
+        # Ensure all outputs have same index as df
+        swing_highs = swing_highs.reindex(df.index, fill_value=np.nan)
+        swing_lows = swing_lows.reindex(df.index, fill_value=np.nan)
+        is_swing_high = is_swing_high.reindex(df.index, fill_value=False)
+        is_swing_low = is_swing_low.reindex(df.index, fill_value=False)
         
         return is_swing_high, is_swing_low, swing_highs, swing_lows
     
     def detect_liquidity_sweep(self, df):
         """
         Detect liquidity sweeps (stop hunts)
-        
-        A sweep occurs when price briefly breaks a swing level then reverses
+        FIXED: Complete index alignment
         """
         is_swing_high, is_swing_low, swing_highs, swing_lows = self.identify_swing_levels(df)
         
-        # Forward fill swing levels and ensure proper indexing
-        swing_high_levels = swing_highs[is_swing_high].reindex(df.index, method='ffill')
-        swing_low_levels = swing_lows[is_swing_low].reindex(df.index, method='ffill')
+        # Forward fill swing levels with proper alignment
+        swing_high_levels = swing_highs[is_swing_high].reindex(df.index).ffill()
+        swing_low_levels = swing_lows[is_swing_low].reindex(df.index).ffill()
         
-        # Fill NaN values with current price for initial periods
+        # Fill NaN values with appropriate defaults
         swing_high_levels = swing_high_levels.fillna(df['High'])
         swing_low_levels = swing_low_levels.fillna(df['Low'])
         
-        # Detect sweep: Close beyond level but next candle closes back inside
+        # Detect sweep with proper alignment
         sweep_high = (
             (df['Close'].shift(1) > swing_high_levels.shift(1)) &  # Previous close above
             (df['Close'] < swing_high_levels.shift(1))              # Current close back below
-        )
+        ).fillna(False)
         
         sweep_low = (
             (df['Close'].shift(1) < swing_low_levels.shift(1)) &   # Previous close below
             (df['Close'] > swing_low_levels.shift(1))               # Current close back above
-        )
+        ).fillna(False)
         
-        return sweep_high.fillna(False), sweep_low.fillna(False)
+        # Ensure final alignment
+        sweep_high = sweep_high.reindex(df.index, fill_value=False)
+        sweep_low = sweep_low.reindex(df.index, fill_value=False)
+        
+        return sweep_high, sweep_low
     
     def identify_fvg(self, df):
         """
         Identify Fair Value Gaps (imbalances)
-        
-        FVG = gap between candle 1's high and candle 3's low (bullish)
-        or gap between candle 1's low and candle 3's high (bearish)
+        FIXED: Complete index alignment
         """
         # Bullish FVG: gap up
-        bullish_fvg = (df['Low'].shift(-1) > df['High'].shift(1)) & \
-                      ((df['Low'].shift(-1) - df['High'].shift(1)) > self.fvg_threshold)
+        bullish_fvg = (
+            (df['Low'].shift(-1) > df['High'].shift(1)) & 
+            ((df['Low'].shift(-1) - df['High'].shift(1)) > self.fvg_threshold)
+        ).fillna(False)
         
         # Bearish FVG: gap down
-        bearish_fvg = (df['High'].shift(-1) < df['Low'].shift(1)) & \
-                      ((df['Low'].shift(1) - df['High'].shift(-1)) > self.fvg_threshold)
+        bearish_fvg = (
+            (df['High'].shift(-1) < df['Low'].shift(1)) & 
+            ((df['Low'].shift(1) - df['High'].shift(-1)) > self.fvg_threshold)
+        ).fillna(False)
         
-        return bullish_fvg.fillna(False), bearish_fvg.fillna(False)
+        # Ensure alignment
+        bullish_fvg = bullish_fvg.reindex(df.index, fill_value=False)
+        bearish_fvg = bearish_fvg.reindex(df.index, fill_value=False)
+        
+        return bullish_fvg, bearish_fvg
     
     def detect_bos(self, df, lookback=5):
         """
         Detect Break of Structure (BOS) / Change of Character (ChoCH)
-        
-        BOS = price breaks recent swing high/low with momentum
+        FIXED: Complete index alignment
         """
-        high = df['High']
-        low = df['Low']
-        close = df['Close']
+        high = df['High'].copy()
+        low = df['Low'].copy()
+        close = df['Close'].copy()
         
-        # Recent swing levels
-        recent_high = high.rolling(lookback).max().shift(1)
-        recent_low = low.rolling(lookback).min().shift(1)
-        
-        # Fill NaN values
-        recent_high = recent_high.fillna(high)
-        recent_low = recent_low.fillna(low)
+        # Recent swing levels with proper alignment
+        recent_high = high.rolling(lookback, min_periods=1).max().shift(1).fillna(high)
+        recent_low = low.rolling(lookback, min_periods=1).min().shift(1).fillna(low)
         
         # Bullish BOS: close above recent high
-        bullish_bos = close > recent_high
+        bullish_bos = (close > recent_high).fillna(False)
         
         # Bearish BOS: close below recent low
-        bearish_bos = close < recent_low
+        bearish_bos = (close < recent_low).fillna(False)
         
-        return bullish_bos.fillna(False), bearish_bos.fillna(False)
+        # Ensure alignment
+        bullish_bos = bullish_bos.reindex(df.index, fill_value=False)
+        bearish_bos = bearish_bos.reindex(df.index, fill_value=False)
+        
+        return bullish_bos, bearish_bos
     
     def calculate_order_flow_proxy(self, df):
         """
         Calculate Cumulative Delta proxy
-        
-        Uses volume and price action to estimate buying/selling pressure
-        (Proxy since true order flow requires tick data)
+        FIXED: Complete index alignment
         """
         # Buying volume estimate
         price_change = df['Close'] - df['Open']
@@ -582,112 +615,134 @@ class SMCExecutionEngine:
     def detect_cvd_divergence(self, df):
         """
         Detect CVD divergence (hidden institutional activity)
-        
-        Bullish divergence: Price makes lower low, but CVD makes higher low
-        Bearish divergence: Price makes higher high, but CVD makes lower high
+        FIXED: Complete index alignment
         """
         cvd = self.calculate_order_flow_proxy(df)
-        close = df['Close']
+        close = df['Close'].copy()
         
-        # Find recent lows and highs
-        low_5 = close.rolling(5).min()
-        high_5 = close.rolling(5).max()
+        # Find recent lows and highs with proper alignment
+        low_5 = close.rolling(5, min_periods=1).min()
+        high_5 = close.rolling(5, min_periods=1).max()
         
-        cvd_low_5 = cvd.rolling(5).min()
-        cvd_high_5 = cvd.rolling(5).max()
-        
-        # Fill NaN values
-        low_5 = low_5.fillna(close)
-        high_5 = high_5.fillna(close)
-        cvd_low_5 = cvd_low_5.fillna(cvd)
-        cvd_high_5 = cvd_high_5.fillna(cvd)
+        cvd_low_5 = cvd.rolling(5, min_periods=1).min()
+        cvd_high_5 = cvd.rolling(5, min_periods=1).max()
         
         # Bullish divergence
-        price_lower_low = (close == low_5) & (close < close.shift(10))
-        cvd_higher_low = (cvd == cvd_low_5) & (cvd > cvd.shift(10))
+        price_lower_low = ((close == low_5) & (close < close.shift(10))).fillna(False)
+        cvd_higher_low = ((cvd == cvd_low_5) & (cvd > cvd.shift(10))).fillna(False)
         bullish_divergence = price_lower_low & cvd_higher_low
         
         # Bearish divergence
-        price_higher_high = (close == high_5) & (close > close.shift(10))
-        cvd_lower_high = (cvd == cvd_high_5) & (cvd < cvd.shift(10))
+        price_higher_high = ((close == high_5) & (close > close.shift(10))).fillna(False)
+        cvd_lower_high = ((cvd == cvd_high_5) & (cvd < cvd.shift(10))).fillna(False)
         bearish_divergence = price_higher_high & cvd_lower_high
         
-        return bullish_divergence.fillna(False), bearish_divergence.fillna(False)
-    
+        # Ensure alignment
+        bullish_divergence = bullish_divergence.reindex(df.index, fill_value=False)
+        bearish_divergence = bearish_divergence.reindex(df.index, fill_value=False)
+        
+        return bullish_divergence, bearish_divergence
+
     def generate_sniper_entry(self, df, ai_prediction):
         """
         Generate sniper entry signals based on SMC confluence
         
-        Entry conditions:
-        1. AI prediction alignment
-        2. Liquidity sweep detected
-        3. BOS confirmation
-        4. FVG retest or CVD divergence
+        FIXED: Complete index alignment for all series
+        
+        Entry logic uses Option 2 (Balanced) for better signal generation
         
         Returns:
             entry_signal: 1 (Long), -1 (Short), 0 (No entry)
             entry_price, stop_loss, take_profit
         """
-        # Get all SMC components
+        # Ensure ai_prediction is aligned to df.index FIRST
+        ai_prediction = pd.Series(ai_prediction, index=df.index) if not isinstance(ai_prediction, pd.Series) else ai_prediction.reindex(df.index, fill_value=0)
+        
+        # Get all SMC components - these return boolean Series
         sweep_high, sweep_low = self.detect_liquidity_sweep(df)
         bullish_fvg, bearish_fvg = self.identify_fvg(df)
         bullish_bos, bearish_bos = self.detect_bos(df)
         bullish_div, bearish_div = self.detect_cvd_divergence(df)
         
+        # FIXED: Ensure all boolean Series have the same index as df
+        # Reindex all boolean series to match df.index and fill missing values with False
+        sweep_high = sweep_high.reindex(df.index, fill_value=False)
+        sweep_low = sweep_low.reindex(df.index, fill_value=False)
+        bullish_fvg = bullish_fvg.reindex(df.index, fill_value=False)
+        bearish_fvg = bearish_fvg.reindex(df.index, fill_value=False)
+        bullish_bos = bullish_bos.reindex(df.index, fill_value=False)
+        bearish_bos = bearish_bos.reindex(df.index, fill_value=False)
+        bullish_div = bullish_div.reindex(df.index, fill_value=False)
+        bearish_div = bearish_div.reindex(df.index, fill_value=False)
+        
         # Calculate ATR for stop/target placement
         atr = self.calculate_atr(df)
         
-        # Initialize signals with proper indexing
+        # Initialize signals with df.index
         entry_signal = pd.Series(0, index=df.index)
         stop_loss = pd.Series(np.nan, index=df.index)
         take_profit = pd.Series(np.nan, index=df.index)
         
-        # Ensure all boolean series have the same index
-        ai_prediction = ai_prediction.reindex(df.index, fill_value=0)
-        sweep_low = sweep_low.reindex(df.index, fill_value=False)
-        sweep_high = sweep_high.reindex(df.index, fill_value=False)
-        bullish_bos = bullish_bos.reindex(df.index, fill_value=False)
-        bearish_bos = bearish_bos.reindex(df.index, fill_value=False)
-        bullish_fvg = bullish_fvg.reindex(df.index, fill_value=False)
-        bearish_fvg = bearish_fvg.reindex(df.index, fill_value=False)
-        bullish_div = bullish_div.reindex(df.index, fill_value=False)
-        bearish_div = bearish_div.reindex(df.index, fill_value=False)
-        
-        # LONG ENTRY CONDITIONS
-        long_setup = (
-            (ai_prediction == 1) &           # AI says Long
-            (sweep_low.shift(1) | sweep_low.shift(2)) &  # Recent low sweep
-            (bullish_bos) &                   # Bullish BOS
-            (bullish_fvg | bullish_div)      # FVG or CVD divergence
-        )
-        
-        entry_signal[long_setup] = 1
-        # Calculate stop and profit levels
-        stop_loss[long_setup] = df['Low'][long_setup] - (atr[long_setup] * 0.5)  # Tight stop
-        take_profit[long_setup] = df['Close'][long_setup] + (atr[long_setup] * 3.5)  # 1:3.5 R:R
-        
-        # SHORT ENTRY CONDITIONS
-        short_setup = (
-            (ai_prediction == -1) &          # AI says Short
-            (sweep_high.shift(1) | sweep_high.shift(2)) &  # Recent high sweep
-            (bearish_bos) &                   # Bearish BOS
-            (bearish_fvg | bearish_div)      # FVG or CVD divergence
-        )
-        
-        entry_signal[short_setup] = -1
-        stop_loss[short_setup] = df['High'][short_setup] + (atr[short_setup] * 0.5)
-        take_profit[short_setup] = df['Close'][short_setup] - (atr[short_setup] * 3.5)
+        # FIXED: Use properly aligned Series for comparisons
+        try:
+            # Create properly aligned shift series
+            sweep_low_shift1 = sweep_low.shift(1).fillna(False)
+            sweep_low_shift2 = sweep_low.shift(2).fillna(False)
+            sweep_high_shift1 = sweep_high.shift(1).fillna(False)
+            sweep_high_shift2 = sweep_high.shift(2).fillna(False)
+            
+            # LONG ENTRY CONDITIONS - use aligned boolean Series directly
+            long_setup = (
+                (ai_prediction == 1) &
+                (
+                    (sweep_low_shift1 | sweep_low_shift2) |
+                    (bullish_bos)
+                ) &
+                (bullish_fvg | bullish_div | bullish_bos)
+            )
+            
+            # Apply long signals
+            entry_signal[long_setup] = 1
+            stop_loss[long_setup] = df.loc[long_setup, 'Low'] - (atr[long_setup] * 0.5)
+            take_profit[long_setup] = df.loc[long_setup, 'Close'] + (atr[long_setup] * 3.5)
+            
+            # SHORT ENTRY CONDITIONS - use aligned boolean Series directly
+            short_setup = (
+                (ai_prediction == -1) &
+                (
+                    (sweep_high_shift1 | sweep_high_shift2) |
+                    (bearish_bos)
+                ) &
+                (bearish_fvg | bearish_div | bearish_bos)
+            )
+            
+            # Apply short signals
+            entry_signal[short_setup] = -1
+            stop_loss[short_setup] = df.loc[short_setup, 'High'] + (atr[short_setup] * 0.5)
+            take_profit[short_setup] = df.loc[short_setup, 'Close'] - (atr[short_setup] * 3.5)
+            
+        except Exception as e:
+            print(f"  ⚠️  Warning in signal generation: {e}")
+            print(f"  Debug info - Series lengths:")
+            print(f"    ai_prediction: {len(ai_prediction)}")
+            print(f"    sweep_low_shift1: {len(sweep_low_shift1)}")
+            print(f"    sweep_low_shift2: {len(sweep_low_shift2)}")
+            print(f"    bullish_bos: {len(bullish_bos)}")
+            print(f"    bullish_fvg: {len(bullish_fvg)}")
+            print(f"    bullish_div: {len(bullish_div)}")
+            # Return empty signals if error
+            pass
         
         return entry_signal, df['Close'], stop_loss, take_profit
     
     def calculate_atr(self, df, period=14):
-        """Calculate Average True Range"""
+        """Calculate Average True Range with proper alignment"""
         high_low = df['High'] - df['Low']
         high_close = np.abs(df['High'] - df['Close'].shift())
         low_close = np.abs(df['Low'] - df['Close'].shift())
         true_range = pd.concat([high_low, high_close, low_close], axis=1).max(axis=1)
         atr = true_range.ewm(span=period, adjust=False).mean()
-        return atr.fillna(method='bfill')
+        return atr.reindex(df.index, fill_value=true_range.mean())
 
 
 # ============================================================================
@@ -710,7 +765,7 @@ class QuantSniperStrategy:
     
     def __init__(self):
         self.macro_filter = MacroFilter()
-        self.predictor = StatisticalPredictor(prediction_threshold=0.65)
+        self.predictor = StatisticalPredictor(prediction_threshold=0.55)  # FIXED: 0.55 for better signal generation
         self.smc_engine = SMCExecutionEngine()
     
     def generate_signals(self, xauusd_m5, dxy_m5=None):
@@ -733,7 +788,6 @@ class QuantSniperStrategy:
         # Layer 1: Calculate macro bias
         if dxy_m5 is not None:
             print("Calculating macro directional bias from DXY correlation...")
-            # Align DXY data with XAUUSD index
             dxy_aligned = dxy_m5.reindex(df.index, method='ffill')
             macro_bias = self.macro_filter.calculate_macro_bias(
                 df['Close'], 
@@ -1367,6 +1421,104 @@ def generate_sample_data(periods=10000):
 
 
 # ============================================================================
+# DIAGNOSTIC FUNCTION
+# ============================================================================
+
+def diagnose_signal_generation(signals_df, strategy=None):
+    """
+    Diagnostic tool to identify why signals aren't being generated
+    
+    Args:
+        signals_df: DataFrame returned from generate_signals()
+        strategy: Optional QuantSniperStrategy instance
+    """
+    print()
+    print("="*70)
+    print("SIGNAL GENERATION DIAGNOSTICS")
+    print("="*70)
+    print()
+    
+    # Check data
+    print("1. DATA CHECK:")
+    print(f"   Total bars: {len(signals_df)}")
+    print(f"   Date range: {signals_df.index[0]} to {signals_df.index[-1]}")
+    print(f"   Price range: ${signals_df['Close'].min():.2f} to ${signals_df['Close'].max():.2f}")
+    print()
+    
+    # Check Layer 1: Macro Bias
+    if 'Macro_Bias' in signals_df.columns:
+        print("2. LAYER 1 - MACRO FILTER:")
+        bullish = (signals_df['Macro_Bias'] == 1).sum()
+        bearish = (signals_df['Macro_Bias'] == -1).sum()
+        neutral = (signals_df['Macro_Bias'] == 0).sum()
+        print(f"   Bullish periods: {bullish} ({bullish/len(signals_df)*100:.1f}%)")
+        print(f"   Bearish periods: {bearish} ({bearish/len(signals_df)*100:.1f}%)")
+        print(f"   Neutral periods: {neutral} ({neutral/len(signals_df)*100:.1f}%)")
+        if neutral > len(signals_df) * 0.5:
+            print("   ⚠️  WARNING: Over 50% neutral - macro filter too strict!")
+        print()
+    
+    # Check Layer 2: AI Predictions
+    if 'AI_Prediction' in signals_df.columns:
+        print("3. LAYER 2 - AI PREDICTIONS:")
+        long_pred = (signals_df['AI_Prediction'] == 1).sum()
+        short_pred = (signals_df['AI_Prediction'] == -1).sum()
+        no_pred = (signals_df['AI_Prediction'] == 0).sum()
+        print(f"   Long predictions: {long_pred} ({long_pred/len(signals_df)*100:.1f}%)")
+        print(f"   Short predictions: {short_pred} ({short_pred/len(signals_df)*100:.1f}%)")
+        print(f"   No prediction: {no_pred} ({no_pred/len(signals_df)*100:.1f}%)")
+        if 'AI_Confidence' in signals_df.columns:
+            avg_conf = signals_df['AI_Confidence'].mean()
+            print(f"   Average confidence: {avg_conf:.1%}")
+            if strategy:
+                print(f"   Threshold: {strategy.predictor.threshold:.1%}")
+                if avg_conf < strategy.predictor.threshold:
+                    print(f"   ⚠️  WARNING: Avg confidence below threshold!")
+        print()
+    
+    # Check Layer 3: Final Signals
+    if 'Signal' in signals_df.columns:
+        print("4. LAYER 3 - FINAL SIGNALS:")
+        long_sig = (signals_df['Signal'] == 1).sum()
+        short_sig = (signals_df['Signal'] == -1).sum()
+        no_sig = (signals_df['Signal'] == 0).sum()
+        print(f"   Long signals: {long_sig}")
+        print(f"   Short signals: {short_sig}")
+        print(f"   Total signals: {long_sig + short_sig}")
+        print(f"   No signal: {no_sig}")
+        
+        if long_sig + short_sig == 0:
+            print()
+            print("   ❌ NO SIGNALS GENERATED!")
+            print()
+            print("   Possible causes:")
+            print("   1. FVG threshold too small (should be $1-5 for XAUUSD)")
+            print("   2. Confidence threshold too high (try 0.55-0.60)")
+            print("   3. All conditions required simultaneously (too strict)")
+            print("   4. Swing lookback causing NaN values")
+            print()
+            print("   Quick fixes:")
+            if strategy:
+                print(f"   - Current FVG threshold: ${strategy.smc_engine.fvg_threshold}")
+                print(f"   - Current confidence threshold: {strategy.predictor.threshold:.1%}")
+            print("   - Try: strategy.smc_engine.fvg_threshold = 2.0")
+            print("   - Try: strategy.predictor.threshold = 0.55")
+        print()
+    
+    # Check R:R ratios
+    if 'RR_Ratio' in signals_df.columns and (signals_df['Signal'] != 0).any():
+        valid_rr = signals_df[signals_df['Signal'] != 0]['RR_Ratio'].dropna()
+        if len(valid_rr) > 0:
+            print("5. RISK:REWARD ANALYSIS:")
+            print(f"   Average R:R: 1:{valid_rr.mean():.2f}")
+            print(f"   Min R:R: 1:{valid_rr.min():.2f}")
+            print(f"   Max R:R: 1:{valid_rr.max():.2f}")
+            print()
+    
+    print("="*70)
+
+
+# ============================================================================
 # SECTION 11: MAIN EXECUTION
 # ============================================================================
 
@@ -1439,6 +1591,9 @@ def main():
     # Generate signals
     signals_df = strategy.generate_signals(xauusd, dxy)
     print()
+    
+    # Run diagnostics
+    diagnose_signal_generation(signals_df, strategy)
     
     # Run backtest
     print("="*70)

@@ -1,7 +1,7 @@
 # XAUUSD Quant Sniper Trading Strategy
 
 > **Elite Three-Layered Algorithmic Trading System for Gold (XAUUSDm)**
-> 
+>
 > Targeting 65%+ Win Rate with 1:3.5 Risk-to-Reward Ratio
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
@@ -87,7 +87,7 @@ Traditional technical analysis strategies often achieve only 50-55% win rates. T
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Capabilities
 
@@ -192,6 +192,7 @@ python xauusd_strategy.py --config
 ```
 
 **Setup Steps:**
+
 1. Open Telegram, search `@BotFather`
 2. Send `/newbot` and follow instructions
 3. Copy your **BOT_TOKEN**
@@ -206,6 +207,7 @@ python xauusd_strategy.py
 ```
 
 Choose:
+
 - **Mode 1**: Backtest only
 - **Data Source 1**: MT5 Live Data (XAUUSDm)
 
@@ -216,6 +218,7 @@ python xauusd_strategy.py --live
 ```
 
 The bot will:
+
 - Monitor XAUUSDm every 15 minutes (configurable)
 - Generate signals using the three-layered framework
 - Send instant Telegram alerts
@@ -260,11 +263,13 @@ fvg_threshold = 0.0001              # Minimum FVG size
 ### Critical Parameters for Optimization
 
 **1. Prediction Threshold** (Layer 2)
+
 - **Default**: 0.65 (65% confidence)
 - **Lower (0.55)**: More signals, lower quality
 - **Higher (0.75)**: Fewer signals, higher quality
 
 **2. Swing Lookback** (Layer 3)
+
 - **Default**: 20 periods
 - **Lower (10)**: More sensitive to liquidity sweeps
 - **Higher (30)**: Only major structural levels
@@ -295,6 +300,7 @@ python quick_fix.py
 ```
 
 **Options:**
+
 1. **Find MT5 Symbol**: Scans your broker for XAUUSDm alternatives
 2. **Test Telegram**: Verifies bot token and chat ID
 3. **Run Sample Test**: Tests strategy with realistic data
@@ -309,6 +315,7 @@ python quick_fix.py
 **Purpose**: Establish directional bias aligned with fundamental forces
 
 **Components:**
+
 - **Global M2 Money Supply**: Primary driver of gold's secular trend
 - **US Real Interest Rates**: Medium-term confirmation (negative correlation)
 - **DXY Correlation**: Short-term USD strength/weakness
@@ -316,6 +323,7 @@ python quick_fix.py
 **Output**: Bullish (1), Bearish (-1), or Neutral (0) bias
 
 **Example:**
+
 ```
 M2 expanding + Real yields falling + DXY weakening = BULLISH BIAS
 → Strategy only takes LONG signals
@@ -326,6 +334,7 @@ M2 expanding + Real yields falling + DXY weakening = BULLISH BIAS
 **Purpose**: Generate high-probability directional signals
 
 **Components:**
+
 - **Volatility Regime Detection**: Classifies market as HIGH (trending) or LOW (ranging)
 - **Momentum Score**: Combines EMA, RSI, MACD for directional strength
 - **Confidence Calculation**: Alignment between momentum and macro bias
@@ -333,6 +342,7 @@ M2 expanding + Real yields falling + DXY weakening = BULLISH BIAS
 **Output**: Directional prediction with confidence score
 
 **Confidence Scoring:**
+
 ```
 Base = |Momentum Strength| × 0.5
 Boost = +0.3 if aligned with macro bias
@@ -344,6 +354,7 @@ Total = 0.5 to 0.8 (50% to 80% confidence)
 **Purpose**: Execute with sniper precision for maximum R:R
 
 **Entry Sequence:**
+
 1. **Liquidity Sweep**: Price hunts stops beyond swing high/low
 2. **BOS Confirmation**: Break of Structure in opposite direction
 3. **FVG/Order Block**: Price retraces to imbalance zone
@@ -351,10 +362,12 @@ Total = 0.5 to 0.8 (50% to 80% confidence)
 5. **Entry**: 50% FVG retest with tight stop
 
 **Stop-Loss Placement:**
+
 - Just beyond swept level or FVG boundary
 - Typically 0.5 × ATR distance
 
 **Take-Profit Placement:**
+
 - Next opposing liquidity pool
 - Typically 3.5 × ATR distance
 - Result: 1:3.5+ R:R ratio
@@ -369,9 +382,10 @@ Total = 0.5 to 0.8 (50% to 80% confidence)
 python xauusd_strategy.py --live
 ```
 
-### What Happens:
+### What Happens
 
 **Every 5 minutes** (or your configured interval):
+
 1. Fetches latest 1000 bars from MT5
 2. Runs three-layered analysis
 3. Detects new signals
@@ -379,7 +393,7 @@ python xauusd_strategy.py --live
 5. Tracks open positions
 6. Notifies on TP/SL hits
 
-### Sample Console Output:
+### Sample Console Output
 
 ```
 ======================================================================
@@ -404,7 +418,7 @@ Press Ctrl+C to stop
   ⏳ Next check in 300s...
 ```
 
-### Telegram Alert Example:
+### Telegram Alert Example
 
 ```
 🟢 XAUUSD SIGNAL ALERT 🟢
@@ -448,6 +462,7 @@ python xauusd_strategy.py
 ```
 
 Choose:
+
 - **Mode**: 1 (Backtest only)
 - **Data Source**: 1 (MT5), 2 (CSV), or 3 (Sample)
 
@@ -456,12 +471,14 @@ Choose:
 After backtesting, the following files are generated:
 
 **1. `quant_sniper_signals.csv`**
+
 - Complete dataset with all indicators
 - Signal column: 1 (Long), -1 (Short), 0 (No signal)
 - Entry/Stop/Target prices
 - Macro bias, AI confidence, volatility regime
 
 **2. `quant_sniper_trades.csv`**
+
 - Individual trade records
 - Entry/exit times and prices
 - P&L per trade
@@ -554,6 +571,7 @@ xauusd/
 ### Issue: "MT5 initialization failed"
 
 **Solution:**
+
 1. Ensure MT5 terminal is **open and running**
 2. Verify you're **logged in** to an account
 3. Try running command prompt as **Administrator** (Windows)
@@ -562,6 +580,7 @@ xauusd/
 ### Issue: "Symbol XAUUSDm not found"
 
 **Solution:**
+
 1. Run symbol checker: `python quick_fix.py` → Option 1
 2. Your broker might use `XAUUSD`, `GOLD`, or another variant
 3. In MT5: Right-click Market Watch → Show All → Enable gold symbol
@@ -570,11 +589,13 @@ xauusd/
 ### Issue: "No signals generated"
 
 **Possible Causes:**
+
 - Sample data not creating favorable conditions
 - Prediction threshold too high
 - Macro bias filtering out all signals
 
 **Solution:**
+
 ```python
 # Lower prediction threshold
 strategy = QuantSniperStrategy()
@@ -586,6 +607,7 @@ strategy.predictor.threshold = 0.55  # From 0.65
 ### Issue: "Telegram bot not sending messages"
 
 **Solution:**
+
 1. Test bot token: `python quick_fix.py` → Option 2
 2. Verify chat ID is correct (numbers only, no letters)
 3. Make sure you've sent `/start` to your bot in Telegram
@@ -594,6 +616,7 @@ strategy.predictor.threshold = 0.55  # From 0.65
 ### Issue: "Strategy generating 0 trades in backtest"
 
 **Solution:**
+
 1. Check data quality (ensure sufficient bars)
 2. Verify DXY data is available
 3. Review macro bias output (might be all neutral)
@@ -606,31 +629,37 @@ strategy.predictor.threshold = 0.55  # From 0.65
 ### Understanding the Metrics
 
 **Win Rate**
+
 - Target: ≥65%
 - Industry average: 50-55%
 - Achieved by three-layered filtering
 
 **Risk:Reward Ratio**
+
 - Target: 1:3.5+
 - Set by ATR-based TP calculation
 - Tight stops from FVG entry placement
 
 **Expectancy**
+
 - Formula: `(Win% × Avg R:R) - (Loss% × 1)`
 - Target: 1.925R
 - Means: $1.925 return per $1 risked
 
 **Profit Factor**
+
 - Formula: `Gross Profit / Gross Loss`
 - Target: >2.0
 - Above 2.0 = Strong edge
 
 **Sharpe Ratio**
+
 - Formula: `(Mean Return / Std Dev) × √252`
 - Target: >1.0
 - Measures quality of returns
 
 **Maximum Drawdown**
+
 - Formula: `Max(Peak - Trough) / Peak × 100`
 - Target: <10%
 - Risk management quality indicator
