@@ -1,0 +1,26 @@
+name: Real-Time Signal Monitor
+
+on:
+  schedule:
+    - cron: '*/5 8-20 * * 1-5'  # Every 5 minutes, 8AM-8PM, Mon-Fri
+  workflow_dispatch:
+
+jobs:
+  signal-check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger Signal Check
+      env:
+        WEBHOOK_URL: "https://nixie.pythonanywhere.com"
+      run: |
+        echo "🔍 Triggering real-time signal check..."
+        
+        # Trigger signal check
+        response=$(curl -s "$WEBHOOK_URL/check")
+        echo "Signal Check: $response"
+        
+        # Check system health
+        health=$(curl -s "$WEBHOOK_URL/health")
+        echo "System Health: $health"
+        
+        echo "✅ Real-time check completed"
